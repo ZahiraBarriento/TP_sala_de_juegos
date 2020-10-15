@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <div *ngIf="!user">
+        <a mat-list-item routerLink="/login">INICIAR SESION</a>
+        <a mat-list-item routerLink="/register">REGISTRARSE</a>
+      </div>
+      <div *ngIf="user">
+        <a mat-list-item routerLink="/anagrama" routerLinkActive="active">ANAGRAMA</a>
+        <a mat-list-item routerLink="/piedra-papel-tijera" routerLinkActive="active">PIEDRA-PAPEL-TIJERA</a>
+        <a mat-list-item routerLink="/agilidad-aritmetica" routerLinkActive="active">AGILIDAD ARITMETICA</a>
+        <a mat-list-item routerLink="/adivina-numero" routerLinkActive="active">ADIVINA NUMERO</a>
+        <a mat-list-item routerLink="/tateti" routerLinkActive="active">TATETI</a>
+        <a mat-list-item routerLink="/memotest" routerLinkActive="active">MEMOTEST</a>
+        <a mat-list-item routerLink="/ahorcado" routerLinkActive="active">AHORCADO</a>
+        <a mat-list-item routerLink="/usuario" routerLinkActive="active">USUARIO</a>
+        <a mat-list-item (click)="onSingOut()">CERRAR SESION</a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar style="background-color: black; height: 8%;">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <div *ngIf="!(isHandset$ | async)">
+        <div *ngIf="!user">
+          <span class="spacer"></span>
+          <span class="name">SALA DE JUEGOS</span>
+          <a mat-list-item routerLink="/login">INICIAR SESION</a>
+          <a mat-list-item routerLink="/register">REGISTRARSE</a>
+        </div>
+        <div *ngIf="user">
+          <a routerLink="/anagrama" routerLinkActive="active">ANAGRAMA</a>
+          <a routerLink="/piedra-papel-tijera" routerLinkActive="active">PIEDRA-PAPEL-TIJERA</a>
+          <a routerLink="/agilidad-aritmetica" routerLinkActive="active">AGILIDAD ARITMETICA</a>
+          <a routerLink="/adivina-numero" routerLinkActive="active">ADIVINA NUMERO</a>
+          <a routerLink="/tateti" routerLinkActive="active">TATETI</a>
+          <a routerLink="/memotest" routerLinkActive="active">MEMOTEST</a>
+          <a routerLink="/ahorcado" routerLinkActive="active">AHORCADO</a>
+          <a routerLink="/usuario" routerLinkActive="active">USUARIO</a>
+          <a (click)="onSingOut()">CERRAR SESION</a>
+        </div>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

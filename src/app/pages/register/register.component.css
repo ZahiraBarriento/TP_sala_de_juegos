@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.contact-form{
+    width: 400px;
+    height: 400px;
+    background: rgb(0, 0, 0, 0.9);
+    margin: 50px auto;
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.hijo{
+    width: 90%;
+    text-align: center;
+    flex-grow: 1;
+    flex: 1 1 auto;
+}
+
+.contact-form h2{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.contact-form input{
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.data{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 35px;
+    color: #fff;
+    font-size: 15px;
+    width: 90%;
+}
+
+.button{
+    height: 30px;
+    color: #fff;
+    font-size: 15px;
+    background: rgb(137, 89, 207);
+    cursor: pointer;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+.center-separator {
+    display: flex;
+    line-height: 1em;
+    color: gray;
+}
+
+.center-separator::before, .center-separator::after 
+{
+    content: '';
+    display: inline-block;
+    flex-grow: 1;
+    margin-top: 0.5em;
+    background: gray;
+    height: 1px;
+    margin-right: 10px;
+    margin-left: 10px;
+}

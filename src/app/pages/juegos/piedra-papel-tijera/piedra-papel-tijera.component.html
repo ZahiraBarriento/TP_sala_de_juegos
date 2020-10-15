@@ -1,0 +1,21 @@
+<div id="fondo">
+    <div class="score-board">
+        <div id="user-label" class="badge">USUARIO</div>
+        <div id="comp-label" class="badge">COMPU</div>
+        <span id="user-score">{{ pointsUser }}</span> - <span id="comp-score">{{ pointsComp }}</span>
+    </div>
+    
+    <div class="choices">
+        <div class="choice" (click)="play('r')">
+            <img src="/assets/image/rock.png">
+        </div>
+        <div class="choice" (click)="play('p')">
+            <img src="/assets/image/paper.png">
+        </div>
+        <div class="choice" (click)="play('s')">
+            <img src="/assets/image/scissors.png">
+        </div>
+    </div>
+    
+    <p class="info-game">{{result}}</p>
+</div>

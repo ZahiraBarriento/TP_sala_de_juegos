@@ -1,0 +1,53 @@
+<div id="fondo">
+    <div class="container" style="text-align: center;">
+
+        <div [hidden]="buttonSelect">
+            <h4 class="select">SELECCIONE SU SIGNO PREFERIDO</h4>
+            <br>
+            <br>
+            <button mat-button class="choice" (click)="select('O')"><img src="../../../assets/image/o.png"></button>
+            <button mat-button class="choice" (click)="select('X')"><img src="../../../assets/image/x.png"></button>
+        </div>
+
+        <div [hidden]="gameTable">
+
+            <img src="../../../assets/image/ttt_board.png" style="margin-top: -6%;">
+
+            <div class="ui-g-12">
+                <button [disabled]="fin" mat-button class="signo" (click)="play(0)" id="lugarUno"
+                    style="position: absolute; margin-top: -45%; margin-left: -23%;"><img id="l0"
+                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
+                <button [disabled]="fin" mat-button class="signo" (click)="play(1)"
+                    style="position: absolute; margin-top: -45%; margin-left: -7.5%;"><img id="l1"
+                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
+                <button [disabled]="fin" mat-button class="signo" (click)="play(2)"
+                    style="position: absolute; margin-top: -45%; margin-left: 8%;"><img id="l2"
+                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
+            </div>
+            <div class="ui-g-12">
+                <button [disabled]="fin" mat-button class="signo" (click)="play(3)"
+                    style="position: absolute; margin-top: -30%; margin-left: -23%;"><img id="l3"
+                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
+                <button [disabled]="fin" mat-button class="signo" (click)="play(4)"
+                    style="position: absolute; margin-top: -30%; margin-left: -7.5%;"><img id="l4"
+                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
+                <button [disabled]="fin" mat-button class="signo" (click)="play(5)"
+                    style="position: absolute; margin-top: -30%; margin-left: 8%;"><img id="l5"
+                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
+            </div>
+            <div class="ui-g-12">
+                <button [disabled]="fin" mat-button class="signo" (click)="play(6)"
+                    style="position: absolute; margin-top: -14%; margin-left: -23%;"><img id="l6"
+                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
+                <button [disabled]="fin" mat-button class="signo" (click)="play(7)"
+                    style="position: absolute; margin-top: -14%; margin-left: -7.5%;"><img id="l7"
+                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
+                <button [disabled]="fin" mat-button class="signo" (click)="play(8)"
+                    style="position: absolute; margin-top: -14%; margin-left: 8%;"><img id="l8"
+                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
+            </div>
+
+            <h4 class="game">{{playGame.resultado}}</h4>
+        </div>
+    </div>
+</div>

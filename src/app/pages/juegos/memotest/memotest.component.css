@@ -1,0 +1,12 @@
+#fondo{
+    background-color: rgb(0, 0, 0, 0.9);
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform:  translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    padding: 80px 40px;
+}

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="hijo">
+        <div *ngIf="show">
+            <label class="title">¿Estás preparado?</label>
+            <button class="button" mat-raised-button (click)="generateWord()">JUGAR</button>
+        </div>
+        <div *ngIf="game">
+            <label class="time">Tiempo: {{time}}</label>
+            <label class="word">Palabra: {{wordDes}}</label>
+            <input [disabled]="lose" class="form-control" type="text" [(ngModel)]="word">
+            <div *ngIf="!lose">
+                <button class="verificar" [disabled]="lose" mat-raised-button (click)="play()">Verificar palabra</button><br>
+            </div>
+            <div *ngIf="lose">
+                <button class="verificar" mat-raised-button (click)="reset()">Volver a jugar</button><br>
+            </div>
+            <button class="rendirse" mat-raised-button (click)="back()">Rendirse</button>
+            
+            <div *ngIf="resultado == 'Vacío'">
+                <label class="resultado">¡Ingrese una palabra!</label>
+            </div>
+            <div *ngIf="resultado == 'Ganó'">
+                <label class="resultado">¡Ganaste! :)</label>
+            </div>
+            <div *ngIf="resultado == 'Fin'">
+                <label class="resultado">¡Se acabo el tiempo! La palabra era: {{playGame.wordOrd}} :(</label>
+            </div>
+            <div *ngIf="resultado == 'Perdió'">
+                <label class="resultado">¡Esa no es! :(</label>
+            </div>
+        </div>
+    </div>
+</div>

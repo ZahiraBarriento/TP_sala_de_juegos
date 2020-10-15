@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%22%20rel=%22stylesheet%22);
+
+.sidenav-container {
+  height: 100%;
+  background: transparent;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}/*
+.hidden{
+  display: none;
+}*/
+
+.spacer{
+  flex: 1 1 auto;
+}
+
+mat-toolbar a{
+  display: inline-block;
+  margin: 0 18px;
+  color: white;
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 10px;
+}
+mat-toolbar a:hover{
+  color: aqua;
+}
+.name{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+}
+
+
+@media (min-width: 768px){
+  .sidenav{
+    display: none;
+  }
+}
+

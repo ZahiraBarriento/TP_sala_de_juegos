@@ -1,0 +1,23 @@
+<body>
+    <div class="contact-form">
+        <div class="hijo">
+            <h2>REGISTRARSE</h2>
+            <form action=""  [formGroup]="registerForm" (ngSubmit)="onSubmitRegister()">
+                <div>
+                    <input formControlName="name" type="text" class="data" placeholder="Ingrese nombre">
+                </div>
+                <div>
+                    <input formControlName="lastName" type="text" class="data" placeholder="Ingrese apellido">
+                </div>
+                <div>
+                    <input formControlName="email" type="email" class="data" placeholder="Ingrese correo electrónico">
+                </div>
+                <div>
+                    <input formControlName="password" type="password" class="data" placeholder="Ingrese contraseña">
+                </div>
+                <input [disabled]="!registerForm.valid" type="submit" class="button" value="CONFIRMAR">
+                <input routerLink="/login" type="submit" class="button" value="CANCELAR">
+            </form>
+        </div>
+    </div>
+</body>

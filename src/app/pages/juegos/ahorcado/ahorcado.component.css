@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%22%20rel=%22stylesheet%22);
+
+#fondo{
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform:  translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    padding: 80px 40px;
+}
+
+.wordSecret{
+    margin-top: 5%;
+    color: white;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 40px;
+    letter-spacing: 10px;
+}
+
+.game{
+    margin-left: 20%;
+    color: white;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 60px;
+    letter-spacing: 10px;
+}
+
+.botonera{
+    justify-content: center;
+    text-align: center;
+    margin: 2px;
+    color: black;
+}
+
+.error{
+    color: white;
+    padding: 10px;
+}
+
+.button-success{
+    background-color: #5cb85c;
+}
+.button-error{
+    background-color: #d9534f;
+}
+.button-not{
+    background-color: white;
+}
+

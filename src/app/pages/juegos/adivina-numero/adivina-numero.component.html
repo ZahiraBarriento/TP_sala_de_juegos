@@ -1,0 +1,11 @@
+<div id="fondo">
+    <div>
+        <p>El número es el...</p>
+
+        <input type="number" min="1" max="100" [(ngModel)]="number">
+        <label>Introduce un número del 1 al 100. Tienes 3 intentos.</label>
+        <button mat-raised-button type="button" (click)="play()">ADIVINAR</button>
+        <p class="info-game">{{result}}</p>
+    </div>
+
+</div>

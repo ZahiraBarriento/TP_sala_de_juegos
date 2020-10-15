@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%22%20rel=%22stylesheet%22);
+@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);
+
+.container{
+    background-color: rgb(0, 0, 0, 0.9);
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform:  translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    padding: 80px 40px;
+}
+.title{
+    position: absolute;
+    font-family: 'Russo One', sans-serif;
+    font-size: 60px;
+    margin: 5% 18%;
+}
+.word{
+    position: absolute;
+    font-family: 'Russo One', sans-serif;
+    font-size: 35px;
+    margin: 6% 5%;
+}
+.time{
+    position: absolute;
+    font-family: 'Russo One', sans-serif;
+    font-size: 35px;
+    margin-left: 5%;
+}
+
+input{
+    width: 60%;
+    margin: 20%;
+    margin-top: 20%;
+    font-size: 40px;
+}
+
+.button{
+    width: 60%;
+    padding: 20px;
+    font-size: 60px;
+    color: black;
+    background-color: white;
+    font-family: 'Press Start 2P', cursive;
+    align-items: center;
+    margin: 20%;
+    margin-top: 20%;
+}
+.verificar, .rendirse{
+    position: absolute;
+    width: 35%;
+    font-family: 'Press Start 2P', cursive;
+    margin-top: -10%;
+    background-color: rgb(55, 15, 112);
+}
+.verificar{
+    margin-left: 10%; 
+}
+.rendirse{
+    margin: 5% 50%;
+    margin-top: -12%;
+}
+
+.resultado{
+    position: absolute;
+    margin-top: -30%;
+    font-family: 'Russo One', sans-serif;
+    font-size: 40px;
+}

@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%22%20rel=%22stylesheet%22);
+
+#fondo{
+    background-color: rgb(0, 0, 0, 0.9);
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform:  translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    padding: 80px 40px;
+}
+
+.select{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 20px;
+}
+.game{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 30px;
+}
+
+.choices {
+    margin: 10px;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    min-height: 100px;
+    margin-top: 8%;
+}
+.choice img {
+    width: 200px !important;
+    height: 200%;
+    padding: 15px;
+    border-radius: 20px;
+}
+.choice img:hover{
+	cursor: pointer;
+    background-color:#8cce7f;
+}
+.choice img:active{
+    background-color:#aca8a8;
+}
+
+.signo img {
+    padding: 10px;
+    border-radius: 20px;
+}
+.signo img:hover{
+	cursor: pointer;
+    background-color:#aca8a8;
+}
+.sugno img:active{
+    background-color:#aca8a8;
+}

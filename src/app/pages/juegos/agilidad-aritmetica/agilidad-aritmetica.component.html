@@ -1,0 +1,20 @@
+<div id="fondo">
+    <div *ngIf="!game">
+        <p>¡Resuelve la cuenta y gana!</p>
+    </div>
+    <div *ngIf="game" class="cuenta">
+            {{playGame.num1}} {{playGame.operator}} {{playGame.num2}} =
+        <input [(ngModel)]="playGame.numEnter" id="result" name="numEnter" type="number" class="form-control" />
+    </div>
+    
+    <br>
+    <h5 [hidden]="check"><button mat-raised-button (click)="checkNum()" class="btn2">VERIFICAR</button></h5>
+
+    <h5 [hidden]="!check"><button mat-raised-button (click)="play()" class="btn">COMENZAR JUEGO</button>
+    </h5>
+    <br>
+
+    <div *ngIf="display" class="gameOver">
+        Cantidad de aciertos: {{playGame.success}}/{{playGame.count}}
+    </div>
+</div>

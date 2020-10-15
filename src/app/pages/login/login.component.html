@@ -1,0 +1,19 @@
+<body>
+    <div class="contact-form">
+        <div class="hijo">
+            <img src="../../../assets/image/user.png" alt="" class="avatar">
+            <h2>INICIAR SESION</h2>
+            <form action=""  [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+                <div>
+                    <input formControlName="email" type="email" class="data" placeholder="Ingrese correo electrónico">
+                </div>
+                <div>
+                    <input formControlName="password" type="password" class="data" placeholder="Ingrese contraseña">
+                </div>
+                <input [disabled]="!loginForm.valid" type="submit" class="button" value="INGRESAR">
+            </form>
+            <div class="center-separator">o</div><br>
+            <input routerLink="/register" type="submit" class="button" value="REGISTRARSE">
+        </div>
+    </div>
+</body>
