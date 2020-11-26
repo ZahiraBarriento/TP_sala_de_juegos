@@ -18,7 +18,6 @@ export class AuthService {
     return new Promise((resolve, rejects) =>{
       this.AFauth.signInWithEmailAndPassword(email, password).then(res =>{
         resolve(res);
-        console.log(res)
       }).catch(error => rejects(error));
     });
   }
@@ -28,14 +27,16 @@ export class AuthService {
     return new Promise((resolve, rejects) =>{
       this.AFauth.createUserWithEmailAndPassword(email, password).then(res =>{
         const uid = res.user.uid;
-        this.db.collection('users').doc(uid).set({
+        var json = {
           name : name,
           lastName : lastName,
           email : email,
           uid : uid
-        })
+        }
+
+        localStorage.setItem('userCurrent', JSON.stringify(json));
+        this.db.collection('users').doc(uid).set(json);
         resolve(res);
-        console.log(res)
       }).catch(error => rejects(error));
     });
   }

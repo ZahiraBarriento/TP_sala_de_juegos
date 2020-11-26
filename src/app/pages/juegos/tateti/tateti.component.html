@@ -1,53 +1,70 @@
-<div id="fondo">
-    <div class="container" style="text-align: center;">
-
-        <div [hidden]="buttonSelect">
+<div [hidden]="buttonSelect">
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile colspan="2">
             <h4 class="select">SELECCIONE SU SIGNO PREFERIDO</h4>
-            <br>
-            <br>
+        </mat-grid-tile>
+        <mat-grid-tile>
             <button mat-button class="choice" (click)="select('O')"><img src="../../../assets/image/o.png"></button>
+        </mat-grid-tile>
+        <mat-grid-tile>
             <button mat-button class="choice" (click)="select('X')"><img src="../../../assets/image/x.png"></button>
-        </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<div [hidden]="gameTable">
+    <br>
+    <mat-grid-list class="tateti" cols="3">
 
-        <div [hidden]="gameTable">
+        <!-- FILA UNO -->
+        <mat-grid-tile>
+            <button [disabled]="fin" mat-button class="signo" (click)="play(0)" id="lugarUno">
+                <img id="l0" src="../../../assets/image/empty.png" width="100px" height="100px">
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button [disabled]="fin" mat-button class="signo" (click)="play(1)">
+                <img id="l1" src="../../../assets/image/empty.png" width="100px" height="100px">
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button [disabled]="fin" mat-button class="signo" (click)="play(2)">
+                <img id="l2" src="../../../assets/image/empty.png" width="100px" height="100px">
+            </button>
+        </mat-grid-tile>
 
-            <img src="../../../assets/image/ttt_board.png" style="margin-top: -6%;">
+        <!-- FILA DOS -->
+        <mat-grid-tile>
+            <button [disabled]="fin" mat-button class="signo" (click)="play(3)">
+                <img id="l3" src="../../../assets/image/empty.png" width="100px" height="100px">
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button [disabled]="fin" mat-button class="signo" (click)="play(4)">
+                <img id="l4" src="../../../assets/image/empty.png" width="100px" height="100px">
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button [disabled]="fin" mat-button class="signo" (click)="play(5)">
+                <img id="l5" src="../../../assets/image/empty.png" width="100px" height="100px">
+            </button>
+        </mat-grid-tile>
 
-            <div class="ui-g-12">
-                <button [disabled]="fin" mat-button class="signo" (click)="play(0)" id="lugarUno"
-                    style="position: absolute; margin-top: -45%; margin-left: -23%;"><img id="l0"
-                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
-                <button [disabled]="fin" mat-button class="signo" (click)="play(1)"
-                    style="position: absolute; margin-top: -45%; margin-left: -7.5%;"><img id="l1"
-                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
-                <button [disabled]="fin" mat-button class="signo" (click)="play(2)"
-                    style="position: absolute; margin-top: -45%; margin-left: 8%;"><img id="l2"
-                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
-            </div>
-            <div class="ui-g-12">
-                <button [disabled]="fin" mat-button class="signo" (click)="play(3)"
-                    style="position: absolute; margin-top: -30%; margin-left: -23%;"><img id="l3"
-                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
-                <button [disabled]="fin" mat-button class="signo" (click)="play(4)"
-                    style="position: absolute; margin-top: -30%; margin-left: -7.5%;"><img id="l4"
-                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
-                <button [disabled]="fin" mat-button class="signo" (click)="play(5)"
-                    style="position: absolute; margin-top: -30%; margin-left: 8%;"><img id="l5"
-                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
-            </div>
-            <div class="ui-g-12">
-                <button [disabled]="fin" mat-button class="signo" (click)="play(6)"
-                    style="position: absolute; margin-top: -14%; margin-left: -23%;"><img id="l6"
-                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
-                <button [disabled]="fin" mat-button class="signo" (click)="play(7)"
-                    style="position: absolute; margin-top: -14%; margin-left: -7.5%;"><img id="l7"
-                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
-                <button [disabled]="fin" mat-button class="signo" (click)="play(8)"
-                    style="position: absolute; margin-top: -14%; margin-left: 8%;"><img id="l8"
-                        src="../../../assets/image/empty.png" width="100px" height="100px"></button>
-            </div>
+        <!-- FILA TRES -->
+        <mat-grid-tile>
+            <button [disabled]="fin" mat-button class="signo" (click)="play(6)">
+                <img id="l6" src="../../../assets/image/empty.png" width="100px" height="100px">
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button [disabled]="fin" mat-button class="signo" (click)="play(7)">
+                <img id="l7" src="../../../assets/image/empty.png" width="100px" height="100px">
+            </button>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button [disabled]="fin" mat-button class="signo" (click)="play(8)">
+                <img id="l8" src="../../../assets/image/empty.png" width="100px" height="100px">
+            </button>
+        </mat-grid-tile>
 
-            <h4 class="game">{{playGame.resultado}}</h4>
-        </div>
-    </div>
+    </mat-grid-list>
 </div>

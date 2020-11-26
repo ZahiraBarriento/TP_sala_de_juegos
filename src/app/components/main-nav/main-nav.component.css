@@ -17,10 +17,7 @@
   position: sticky;
   top: 0;
   z-index: 1;
-}/*
-.hidden{
-  display: none;
-}*/
+}
 
 .spacer{
   flex: 1 1 auto;
@@ -32,7 +29,7 @@ mat-toolbar a{
   color: white;
   text-decoration: none;
   font-family: 'Press Start 2P', cursive;
-  font-size: 10px;
+  font-size: 15px;
 }
 mat-toolbar a:hover{
   color: aqua;
@@ -41,7 +38,6 @@ mat-toolbar a:hover{
   font-family: 'Press Start 2P', cursive;
   font-size: 20px;
 }
-
 
 @media (min-width: 768px){
   .sidenav{

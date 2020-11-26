@@ -7,9 +7,19 @@
                 <div>
                     <input formControlName="email" type="email" class="data" placeholder="Ingrese correo electrónico">
                 </div>
+                <div *ngFor="let error of errorMessages.email">
+                    <ng-container *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+                      <small class="error-message">{{error.message}}</small>
+                    </ng-container>
+                  </div>
                 <div>
                     <input formControlName="password" type="password" class="data" placeholder="Ingrese contraseña">
                 </div>
+                <div *ngFor="let error of errorMessages.password">
+                    <ng-container *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+                      <small class="error-message">{{error.message}}</small>
+                    </ng-container>
+                  </div>
                 <input [disabled]="!loginForm.valid" type="submit" class="button" value="INGRESAR">
             </form>
             <div class="center-separator">o</div><br>

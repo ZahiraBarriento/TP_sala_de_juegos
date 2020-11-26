@@ -1,5 +1,7 @@
-import { Component, OnInit, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FirebaseService } from 'src/app/services/firebase.service';
 import { Anagram } from '../../../classes/anagram';
+import { AlertService } from '../../../services/alert.service';
 
 @Component({
   selector: 'app-anagrama',
@@ -18,13 +20,21 @@ export class AnagramaComponent implements OnInit {
   show : boolean = true;
   game : boolean = false;
   lose : boolean = false;
-  
-  constructor() 
+  user : any;
+  partida : any;
+  gano : number = 0;
+  perdio : number = 0;
+  jugadas : number = 0;
+
+  constructor(private firebase : FirebaseService, private alert : AlertService) 
   {
     this.playGame = new Anagram();
   }
   
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('userCurrent'));
+    console.log(this.user)
+    this.obtenerPartida();
   }
 
   generateWord()
@@ -57,10 +67,22 @@ export class AnagramaComponent implements OnInit {
       
       if (this.resultado == "Ganó")
       {
+        this.alert.presentAlertSuccess('GANASTE', 'Has descubierto la palabra', 'OK');
         this.timeSpent = this.time;
         clearInterval(this.count);
         this.time = 0;
         this.lose = true;
+        this.gano = this.partida.gano + 1;
+        this.perdio = this.partida.perdio;
+        this.jugadas =  this.partida.jugadas + 1;
+        this.firebase.updateData('games', this.user.uid, {anagrama : {perdio : this.perdio ,gano : this.gano, jugadas : this.jugadas}});
+
+      } else if (this.resultado == "Perdió"){
+        this.alert.presentAlertError('PERDISTE', 'La palabra era ' + this.playGame.wordOrd, 'OK');
+        this.gano = this.partida.gano;
+        this.perdio = this.partida.perdio + 1;
+        this.jugadas =  this.partida.jugadas + 1;
+        this.firebase.updateData('games', this.user.uid, {anagrama : {perdio : this.perdio ,gano : this.gano, jugadas : this.jugadas}});
       }
     }
   }
@@ -83,9 +105,26 @@ export class AnagramaComponent implements OnInit {
   }
 
   gameOver(){
+    this.alert.presentAlertError('Se acabo el tiempo', 'La palabra era ' + this.playGame.wordOrd, 'OK');
     this.lose = true;
     this.resultado = "Fin"
     this.time = 0;
-    console.log('entro')
+    this.gano = this.partida.gano;
+    this.perdio = this.partida.perdio + 1;
+    this.jugadas =  this.partida.jugadas + 1;
+    this.firebase.updateData('games', this.user.uid, {anagrama : {perdio : this.perdio ,gano : this.gano, jugadas : this.jugadas}});  
+  }
+
+  obtenerPartida(){
+    var partidas : any;
+    this.firebase.getDataQuery('games').subscribe(element =>{
+      partidas = element;
+      partidas.forEach(element => {
+        if(element.id == this.user.uid){
+          this.partida = element.anagrama;
+          console.log(this.partida)
+        }
+      });
+    })
   }
 }

@@ -1,0 +1,12 @@
+@import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%22%20rel=%22stylesheet%22);
+@import url(https://fonts.googleapis.com/css2?family=Russo+One&display=swap);
+
+.titulo{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    color: rgb(113, 25, 116);
+}
+.data{
+    font-family: 'Russo One', sans-serif;
+    font-size: 15px;
+}

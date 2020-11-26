@@ -1,21 +1,27 @@
-<div id="fondo">
-    <div class="score-board">
-        <div id="user-label" class="badge">USUARIO</div>
-        <div id="comp-label" class="badge">COMPU</div>
-        <span id="user-score">{{ pointsUser }}</span> - <span id="comp-score">{{ pointsComp }}</span>
-    </div>
-    
-    <div class="choices">
-        <div class="choice" (click)="play('r')">
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile class="puntaje" colspan="3">
+        <div class="score-board">
+            <div id="user-label" class="badge">USUARIO</div>
+            <div id="comp-label" class="badge">COMPU</div>
+            <span id="user-score">{{ pointsUser }} - </span><span id="comp-score">{{ pointsComp }}</span>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+        <div align="center" class="choice" (click)="play('r')">
             <img src="/assets/image/rock.png">
         </div>
-        <div class="choice" (click)="play('p')">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+        <div align="center" class="choice" (click)="play('p')">
             <img src="/assets/image/paper.png">
         </div>
-        <div class="choice" (click)="play('s')">
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1">
+        <div align="center" class="choice" (click)="play('s')">
             <img src="/assets/image/scissors.png">
         </div>
-    </div>
-    
-    <p class="info-game">{{result}}</p>
-</div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="3">
+        <p class="info-game">{{result}}</p>
+    </mat-grid-tile>
+</mat-grid-list>

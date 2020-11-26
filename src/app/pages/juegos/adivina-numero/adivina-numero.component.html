@@ -1,11 +1,21 @@
-<div id="fondo">
-    <div>
-        <p>El número es el...</p>
-
-        <input type="number" min="1" max="100" [(ngModel)]="number">
-        <label>Introduce un número del 1 al 100. Tienes 3 intentos.</label>
-        <button mat-raised-button type="button" (click)="play()">ADIVINAR</button>
-        <p class="info-game">{{result}}</p>
-    </div>
-
-</div>
+<mat-grid-list cols="2" rowHeight="3:1">
+    <mat-grid-tile colspan="2">
+        <p>Adivina el número</p>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+        <div align="center">
+            <input type="number" min="1" max="100" [(ngModel)]="number"><br><br>
+            <label>Introduce un número del 1 al 100. Tienes 4 intentos.</label>
+            <p class="info-game">{{result}}</p>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile *ngIf="!otraVez">
+        <button class="adivinar" mat-raised-button type="button" (click)="play()">ADIVINAR</button>
+    </mat-grid-tile>
+    <mat-grid-tile *ngIf="otraVez">
+        <button class="adivinar" mat-raised-button type="button" (click)="reset()">VOLVER A JUGAR</button>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <button [disabled]="activar" class="ayuda" mat-raised-button type="button" (click)="ayuda()">AYUDA</button>
+    </mat-grid-tile>
+</mat-grid-list>

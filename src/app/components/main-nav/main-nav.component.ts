@@ -35,6 +35,7 @@ export class MainNavComponent {
     }
   
     onSingOut(){
+      localStorage.removeItem('userCurrent');
       this.user = false;
       this.authService.exit();
     }

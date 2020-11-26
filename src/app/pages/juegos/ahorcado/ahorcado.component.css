@@ -1,16 +1,13 @@
 @import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%22%20rel=%22stylesheet%22);
 
-#fondo{
-    background-color: rgba(0, 0, 0, 0.9);
-    position: absolute;
-    top: 54%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform:  translate(-50%, -50%);
-    width: 70%;
-    height: 60%;
-    padding: 80px 40px;
+mat-grid-list{
+    margin: 20px 110px;
+    max-width: 100%;
+    max-height: 100%;
+}
+mat-grid-tile{
+    background-color: rgb(0, 0, 0, 0.9);
+    border: solid 2px rgb(0, 0, 0, 0.4);
 }
 
 .wordSecret{
@@ -27,7 +24,7 @@
     color: white;
     text-align: center;
     font-family: 'Press Start 2P', cursive;
-    font-size: 60px;
+    font-size: 6vh;
     letter-spacing: 10px;
 }
 
@@ -36,6 +33,9 @@
     text-align: center;
     margin: 2px;
     color: black;
+}
+div{
+    max-width: 80%;
 }
 
 .error{

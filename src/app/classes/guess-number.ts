@@ -25,16 +25,4 @@ export class GuessNumber {
 
         return this.win;
     }
-
-    public help(userNum) : string {
-        var message : string;
-
-        if (userNum > this.numSecret) {
-            message = "¡Te pasaste!"
-        } else {
-            message = "¡Te falta!"
-        }
-
-        return message;
-    }
 }

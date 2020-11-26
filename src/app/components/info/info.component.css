@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../assets/image/asdasd.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.contact-form{
+    width: 400px;
+    height: 400px;
+    background: rgb(0, 0, 0, 0.9);
+    margin: 50px auto;
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.hijo{
+    width: 90%;
+    text-align: center;
+    flex-grow: 1;
+    flex: 1 1 auto;
+    color: white;
+}
+
+.contact-form h2 h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h2{
+    color: white;
+}

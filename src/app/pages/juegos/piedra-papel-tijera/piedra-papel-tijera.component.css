@@ -1,16 +1,17 @@
 @import url(https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap%22%20rel=%22stylesheet%22);
 
-#fondo{
+mat-grid-list{
+    margin: 20px 110px;
+    max-width: 100%;
+    max-height: 100%;
+}
+mat-grid-tile{
     background-color: rgb(0, 0, 0, 0.9);
-    position: absolute;
-    top: 54%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    transform:  translate(-50%, -50%);
-    width: 70%;
-    height: 60%;
-    padding: 80px 40px;
+    border: solid 2px rgb(0, 0, 0, 0.4);
+}
+
+.puntaje{
+    height: 20%;
 }
 
 /*OPCIONES*/
@@ -19,12 +20,10 @@
     display: flex; 
     flex-direction: row;
     justify-content: center;
-    min-height: 100px;
     margin-top: 8%;
 }
 .choice img {
-    width: 280px !important;
-    height: 280px;
+    width: 60%;
     padding: 15px;
     border-radius: 20px;
 }
@@ -38,7 +37,7 @@
 
 /*PUNTAJE*/
 .score-board{
-	width: 200px;
+	width: 20vw;
 	background-color:white;
 	text-align: center;
     margin:-4% auto; 
@@ -51,26 +50,29 @@
 .badge{
 	background-color: rgb(72, 158, 208);
 	padding: 2px 20px;
-	font-size: 20px;
+	font-size: 1.5vw;
 }
 #user-label{
     font-family: 'Press Start 2P', cursive;
 	position: absolute;
 	top:20px;
-	left: -120px;
+    left: -120px;
 }
 #comp-label{
     font-family: 'Press Start 2P', cursive;
 	position: absolute;
 	top: 20px;
-	right: -90px;
+    right: -90px;
+}
+#user-score, #comp-score{
+    font-size: 5vw;
 }
 
 /*QUE SE SELECCIONA*/
 .info-game {
     font-family: 'Press Start 2P', cursive;
     background-color: transparent;
-    font-size: 40px;
+    font-size: 4vw;
     color: white;
     padding: 20px;
     text-align: center;

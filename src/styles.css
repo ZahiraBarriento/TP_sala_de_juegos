@@ -10,3 +10,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-size: 100% 100%;
 }
 
+.swal-modal pre  {
+    background-color: rgba(63,255,106,0.69);
+    border: 3px solid white;
+  }
+
+
+
+

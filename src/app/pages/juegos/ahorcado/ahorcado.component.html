@@ -1,6 +1,16 @@
-<div id="fondo">
-    <h4 class="game">{{playGame.resultado}}</h4>
-    <img style="margin-left: 10%; margin-top: -10%;" width="30%" src="../../../../assets/image/Ahorcado-{{playGame.countError}}.png">
-    <p class="wordSecret">{{playGame.guion}}</p><br><br>
-    <button mat-raised-button *ngFor="let button of buttons" class="botonera" (click)="play(button)" [ngClass]="button.state">{{button.letter}}</button>
-</div>
+<mat-grid-list cols="2" rowHeight="3:1">
+    <mat-grid-tile rowspan="2">
+        <img width="300" src="../../../../assets/image/Ahorcado-{{playGame.countError}}.png">
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <h4 class="game">{{playGame.resultado}}</h4>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <p class="wordSecret">{{playGame.guion}}</p><br><br>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+        <div>
+            <button mat-raised-button *ngFor="let button of buttons" class="botonera" (click)="play(button)" [ngClass]="button.state">{{button.letter}}</button>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

@@ -58,7 +58,6 @@ export class ArithmeticAgility {
         if (this.numEnter == this.result && this.count < 5) {
             this.success++;
             this.count++;
-            console.log('entro');
         }
         else if (this.count < 5){
             this.count++;

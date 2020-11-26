@@ -1,19 +1,36 @@
-<div id="fondo">
-    <p>HAY QUE TERMINAR, ESTO SERIA UN EJEMPLO</p>
-    
-    <p class="titulo">DATOS DEL USUARIO</p>
-    <p class="data">
-        Nombre: {{name}}<br><br>
-        Apellido: {{lastName}}<br><br>
-        Correo electrónico: {{email}}<br><br>
-    </p>
-    <p class="titulo">JUEGO MAS JUGADO</p>
-    <p class="data">
-        {{game}}<br><br>
-    </p>
-    <p class="titulo">PUNTAJE</p>
-    <p class="data">
-        Victorias: {{win}}<br><br>
-        Derrotas: {{lose}}
-    </p>
-</div>
+<table>
+    <tr>
+        <th class="personales">
+            <br>
+            <p class="titulo">DATOS DEL USUARIO</p>
+            <p class="data">
+                Nombre: {{user.name}} &nbsp;&nbsp; Apellido: {{user.lastName}}<br><br>
+                Correo electrónico: {{user.email}}<br><br>
+            </p>
+        </th>
+
+        <th rowspan="2" class="games">
+            <div *ngFor='let game of partida'>
+                <br>
+                <p class="titulo">PUNTAJES DE JUEGOS</p><br>
+                <app-info-juegos victorias="{{game.adivina.gano}}" derrotas="{{game.adivina.perdio}}" juego='ADIVINA'>
+                </app-info-juegos>
+                <br>
+                <app-info-juegos victorias="{{game.agilidad.gano}}" derrotas="{{game.agilidad.perdio}}"
+                    juego='AGILIDAD ARITMETICA'></app-info-juegos>
+                <br>
+                <app-info-juegos victorias="{{game.ahorcado.gano}}" derrotas="{{game.ahorcado.perdio}}"
+                    juego='AHORCADO'></app-info-juegos>
+                <br>
+                <app-info-juegos victorias="{{game.anagrama.gano}}" derrotas="{{game.anagrama.perdio}}"
+                    juego='ANAGRAMA'></app-info-juegos>
+                <br>
+                <app-info-juegos victorias="{{game.ppt.gano}}" derrotas="{{game.ppt.perdio}}"
+                    juego='PIEDRA PAPEL TIJERA'></app-info-juegos>
+                <br>
+                <app-info-juegos victorias="{{game.tateti.gano}}" derrotas="{{game.tateti.perdio}}" juego='TA TE TI'>
+                </app-info-juegos>
+            </div>
+        </th>
+    </tr>
+</table>

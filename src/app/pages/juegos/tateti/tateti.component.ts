@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { Tateti } from '../../../classes/tateti';
 import { Router } from '@angular/router';
+import { FirebaseService } from 'src/app/services/firebase.service';
+import { AlertService } from 'src/app/services/alert.service';
 
 @Component({
   selector: 'app-tateti',
@@ -19,9 +21,20 @@ export class TatetiComponent implements OnInit {
   gameTable: boolean = true; //tateti
   fin: boolean = false;
   result: string;
+  userCurrent : any;
+  partida : any;
+  gano : number = 0;
+  perdio : number = 0;
+  empate : number = 0;
+  jugadas : number = 0;
 
-  constructor(public router: Router) {
+  constructor(
+    public router: Router, 
+    private firebase : FirebaseService,
+    private alert : AlertService) {
     this.playGame = new Tateti();
+    this.userCurrent = JSON.parse(localStorage.getItem('userCurrent'));
+    this.obtenerPartida();
   }
 
   ngOnInit() {
@@ -60,10 +73,28 @@ export class TatetiComponent implements OnInit {
     }
 
     this.result = this.playGame.game(this.user);
-    console.log(this.result)
-    if (this.result == 'GANO' || this.result == 'PERDIO') {
-      this.reset();
+    if(this.result == 'GANO'){
+      this.alert.presentAlertSuccess('GANASTE', 'Has ganado la partida.', 'OK');
+      setTimeout(() => {
+        location.reload();
+      }, 1500);
       this.fin = true;
+      this.gano = this.partida.gano + 1;
+      this.perdio = this.partida.perdio;
+      this.empate = this.partida.empate;
+      this.jugadas =  this.partida.jugadas + 1;
+      this.firebase.updateData('games', this.userCurrent.uid, {tateti : {perdio : this.perdio, gano : this.gano, empate: this.empate, jugadas : this.jugadas}});
+    }else if(this.result == 'PERDIO'){
+      this.alert.presentAlertError('PERDISTE', 'Has perdido la partida.', 'OK');
+      setTimeout(() => {
+        location.reload();
+      }, 1500);
+      this.fin = true;
+      this.gano = this.partida.gano;
+      this.perdio = this.partida.perdio + 1;
+      this.empate = this.partida.empate;
+      this.jugadas =  this.partida.jugadas + 1;
+      this.firebase.updateData('games', this.userCurrent.uid, {tateti : {perdio : this.perdio, gano : this.gano, empate: this.empate, jugadas : this.jugadas}});
     }
   }
 
@@ -85,5 +116,20 @@ export class TatetiComponent implements OnInit {
     setTimeout(() =>{
       window.location.reload();
     }, 2000);
+  }
+
+  
+  obtenerPartida(){
+    var partidas : any;
+    this.firebase.getDataQuery('games').subscribe(element =>{
+      partidas = element;
+      partidas.forEach(element => {
+        console.log(element.id)
+        if(element.id == this.userCurrent.uid){
+          this.partida = element.tateti;
+          console.log(this.partida)
+        }
+      });
+    })
   }
 }
